@@ -17,6 +17,10 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            GameObject.FindWithTag("Red").transform.Rotate(0.0f, 0.0f, 45.0f);
+            GameObject.FindWithTag("Blue").transform.Rotate(0.0f, 0.0f, -45.0f);
+        }
     }
 }
