@@ -22,5 +22,17 @@ public class InputManager : MonoBehaviour
             GameObject.FindWithTag("Red").transform.Rotate(0.0f, 0.0f, 45.0f);
             GameObject.FindWithTag("Blue").transform.Rotate(0.0f, 0.0f, -45.0f);
         }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            if (GameObject.FindWithTag("Red") != null)
+            {
+                GameObject.FindWithTag("Red").transform.position = new Vector3(transArray[0].position.x, transArray[0].position.y * -1, transArray[0].position.z);
+            }
+            if (GameObject.FindWithTag("Blue") != null)
+            {
+                GameObject.FindWithTag("Blue").transform.position = new Vector3(transArray[1].position.x, transArray[1].position.y * -1, transArray[1].position.z);
+            }
+        }
     }
 }
