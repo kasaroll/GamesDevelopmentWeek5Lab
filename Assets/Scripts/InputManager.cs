@@ -34,5 +34,21 @@ public class InputManager : MonoBehaviour
                 GameObject.FindWithTag("Blue").transform.position = new Vector3(transArray[1].position.x, transArray[1].position.y * -1, transArray[1].position.z);
             }
         }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            if (GameObject.FindWithTag("Red") != null)
+            {
+                float redRandNum = Random.Range((51.0f / 255.0f), (255.0f / 255.0f));
+                GameObject.FindWithTag("Red").GetComponent<PrintAndHide>().rend.material.color = new Color(redRandNum, 0.0f, 0.0f);
+                Debug.Log("Red: " + redRandNum);
+            }
+            if (GameObject.FindWithTag("Blue") != null)
+            {
+                float blueRandNum = Random.Range((51.0f / 255.0f), (255.0f / 255.0f));
+                GameObject.FindWithTag("Blue").GetComponent<PrintAndHide>().rend.material.color = new Color(0.0f, 0.0f, blueRandNum);
+                Debug.Log("Blue: " + blueRandNum);
+            }
+        }
     }
 }
